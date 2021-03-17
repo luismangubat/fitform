@@ -1,5 +1,17 @@
+  
 .App {
-  text-align: center;
+  background-color: #0C0C0C;
+  height: 100vh;
+
+ 
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+.Body{
+  background-color: #0C0C0C;
+  color: #0C0C0C;
 }
 
 .App-logo {
