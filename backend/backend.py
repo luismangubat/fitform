@@ -9,5 +9,10 @@ def output():
     return "Flask Server"
 
 
+# @app.route('/upload', methods=['POST'])
+# def uploadVideo():
+
+
+
 if __name__ == '__main__':
     app.run()
