@@ -1,15 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
-import Landing from './pages/landing';
+// import Landing from './pages/landing';
+import Profile from './pages/profile';
 
 
 function App() {
   return (
     <div className='App'>
 
-      <Landing/>
-       Hi there
-       
+      <Profile/>
+  
     </div>
   );
 }

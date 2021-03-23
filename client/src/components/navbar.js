@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles, fade, } from '@material-ui/core/styles';
 import { Typography,  AppBar, Toolbar } from '@material-ui/core';
-import InputBase from '@material-ui/core/InputBase';
+// import InputBase from '@material-ui/core/InputBase';
 
 const useStyles = makeStyles({
 	
@@ -54,7 +54,7 @@ const Navbar = (props) => {
 			background: 'rgba(250,251,255,.01)',
 			}}>
 			<Toolbar>
-				<Typography  style={{flexGrow:12}}  width='50px'height='50px' >
+				<Typography  style={{flexGrow:12, color:'black'}}  width='50px'height='50px' >
 				The Shoppies  
 				</Typography>
 				<Typography  height='50px'  >
