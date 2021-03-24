@@ -19,6 +19,7 @@ function TabPanel(props) {
       hidden={value !== index}
       id={`nav-tabpanel-${index}`}
       aria-labelledby={`nav-tab-${index}`}
+      
       {...other}
     >
       {value === index && (
@@ -61,6 +62,9 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
   },
   tab: {
+    indicator: {
+      backgroundColor: '#DE4922',  
+    }
  
   }
 }));
@@ -81,6 +85,8 @@ export default function Stats(props) {
           value={value}
           onChange={handleChange}
           aria-label="nav tabs example"
+          indicatorColor="#fff"
+          background='white'
          
         >
           <LinkTab label="Saved Exercise" href="/drafts" {...a11yProps(0)} />
@@ -94,8 +100,8 @@ export default function Stats(props) {
       <TabPanel value={value} index={1}>
         Page Two
       </TabPanel>
-      <TabPanel value={value} index={2} className={classes.tabs}>
-        {props.Stats}
+      <TabPanel value={value} index={2} className={classes.tabs} indicatorColor="#fff">
+        {props.Tab3}
       </TabPanel>
     </div>
   );

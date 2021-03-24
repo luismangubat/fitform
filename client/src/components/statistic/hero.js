@@ -1,15 +1,26 @@
 import React from 'react'
 import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles({
+
+  container: {
+    paddingTop: '20px',
+    paddingBottom: '10px'
+  }
+});
 
 
-const hero = () => {
+const Hero = () => {
+  const classes = useStyles();
+
   return (
-    <div>
-      <Typography>
+    <div className={classes.container}>
+      <Typography variant={'h3'} color='secondary'>
          Elon Musk
       </Typography>
     </div>
   )
 }
 
-export default hero
+export default Hero

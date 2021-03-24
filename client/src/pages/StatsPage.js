@@ -9,7 +9,7 @@ const StatsPage = () => {
     <div>
       <Navbar/>
       <Tabs
-      Stats={<Stats/>}
+      Tab3={<Stats/>}
       />
       
     </div>

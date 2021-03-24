@@ -5,13 +5,9 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles({
 
   Graph: {
-
-
     // Change this later
-    height: '1000px'
+    height: '500px'
   }
-
-
 
 })
 
@@ -31,7 +27,8 @@ const state = {
       fill: false,
       borderColor: "#CFD8DC"
     }
-  ]
+  ],
+
 };
 
 
