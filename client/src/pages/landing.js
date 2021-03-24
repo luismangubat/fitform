@@ -12,7 +12,7 @@ const useStyles = makeStyles({
 	
 	Background: {
     backgroundImage: `url(${Image})`,
-    backgroundSize: "100% 100%",
+    backgroundSize: 'cover',
     width: "100%",
     height: "100%",
   },
@@ -69,7 +69,7 @@ function Landing() {
       <AppBar position="static">
         <Toolbar variant="dense" className={classes.navbar}>
           <img src={Logo} className={classes.navbarLogo}></img>
-          <Typography variant="h6">
+          <Typography variant="h6" color='primary'>
             Fitform
           </Typography>
         </Toolbar>
@@ -77,7 +77,7 @@ function Landing() {
       <Grid container spacing={2} direction="column">
       <Grid item xs={12}>
         <Typography variant="h6" color="inherit">
-          Fitform
+       
         </Typography>
       </Grid>
       <Grid item xs={12}></Grid>
