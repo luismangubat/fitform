@@ -1,11 +1,14 @@
 import React from 'react';
+import Hero from './hero';
+import Graph from './graph';
+
 
 const Statistic = () => {
   return (
 
     <div> 
-
-      Hello 
+      <Hero/>
+      <Graph/>
     </div>
   )
 }

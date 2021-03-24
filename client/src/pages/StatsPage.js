@@ -7,7 +7,7 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Navbar from '../components/navbar';
-import Statistic from '../components/statistic';
+import Statistic from '../components/statistic/statistic';
 
 
 function TabPanel(props) {
@@ -60,6 +60,9 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
   },
+  tab: {
+ 
+  }
 }));
 
 export default function Stats() {
@@ -79,6 +82,7 @@ export default function Stats() {
           value={value}
           onChange={handleChange}
           aria-label="nav tabs example"
+         
         >
           <LinkTab label="Saved Exercise" href="/drafts" {...a11yProps(0)} />
           <LinkTab label="Recordings" href="/trash" {...a11yProps(1)} />
@@ -91,8 +95,8 @@ export default function Stats() {
       <TabPanel value={value} index={1}>
         Page Two
       </TabPanel>
-      <TabPanel value={value} index={2}>
-        Page Three
+      <TabPanel value={value} index={2} className={classes.tabs}>
+        <Statistic/>
       </TabPanel>
     </div>
   );
