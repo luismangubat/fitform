@@ -1,5 +1,4 @@
-import Navbar from '../components/navbar'
-import { makeStyles, fade, } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Image from '../assets/landing-page.jpg';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
@@ -7,7 +6,7 @@ import Logo from '../assets/fitform logo.svg';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
+
 
 const useStyles = makeStyles({
 	

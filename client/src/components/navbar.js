@@ -1,7 +1,6 @@
 import React from 'react';
 import { makeStyles, fade, } from '@material-ui/core/styles';
 import { Typography,  AppBar, Toolbar } from '@material-ui/core';
-import InputBase from '@material-ui/core/InputBase';
 
 const useStyles = makeStyles({
 	
