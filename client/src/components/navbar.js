@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles, fade, } from '@material-ui/core/styles';
-import { Typography,  AppBar, Toolbar } from '@material-ui/core';
+import { Typography,  AppBar, Toolbar, Button } from '@material-ui/core';
+import Logo from '../assets/fitform logo.svg';
 
 const useStyles = makeStyles({
 	
@@ -15,6 +16,11 @@ const useStyles = makeStyles({
 		width: '100%'
 
 	},
+	
+	navbarLogo: {
+    width: "30px",
+    paddingRight: "10px",
+  },
 	
   search: {
     position: 'relative',
@@ -38,6 +44,11 @@ const useStyles = makeStyles({
 	InputBase: {
 		textAlign: 'center',
 		paddingLeft: '70px'
+	}, 
+
+	Button: {
+		textTransform: 'none',
+		
 	}
 
 });
@@ -51,16 +62,22 @@ const Navbar = (props) => {
 			backdropFilter: "blur(20px) saturate(200%)",
 			boxShadow: "0 0 20px rgba(0,0,0,.04)",
 			background: 'rgba(250,251,255,.01)',
+			position: 'relative'
 			}}>
 			<Toolbar>
-				<Typography  style={{flexGrow:12}}  width='50px'height='50px' >
-				The Shoppies  
+				<img src={Logo} className={classes.navbarLogo}></img>
+				<Typography  style={{flexGrow:12, color: 'black'}}  width='50px'height='50px' >
+					Fitform 
 				</Typography>
-				<Typography  height='50px'  >
-					<div className={classes.search}>
-		
-					</div>
-				</Typography>
+				<Typography >
+            <Button  className={classes.Button} onClick={() => window.location = '/workout'}> Workout </Button>
+          </Typography>
+          <Typography>
+            <Button className={classes.Button}  onClick={() => window.location = '/exercise'} > Login </Button>
+          </Typography>
+          <Typography style={{paddingRight: '3%'}} >
+            <Button  className={classes.Button}  onClick={() => window.location = '/Profile'}> Profile</Button>
+          </Typography>
 			</Toolbar>
 		</AppBar>
 	);

@@ -1,7 +1,7 @@
 
 import './App.css';
 import Landing from './pages/landing';
-import Stats from './pages/stats';
+import Stats from './pages/StatsPage';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 
