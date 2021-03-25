@@ -92,7 +92,7 @@ function Landing() {
         </Grid>
         <Grid item xs={6}>
         <p className={classes.tagline}>A personalized coach right in the comfort of your home</p>
-        <Button variant="contained" className={classes.getStarted} onClick={() => window.location.href = '/stats'}>
+        <Button variant="contained" className={classes.getStarted} onClick={() => window.location.href = '/profile'}>
           Get Started
         </Button>
 

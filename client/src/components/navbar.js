@@ -88,10 +88,10 @@ const Navbar = (props) => {
             <Button  className={classes.actionButton} onClick={() => window.location = '/workout'}> Workout </Button>
           </Typography>
           <Typography>
-            <Button className={classes.Button}  onClick={() => window.location = '/exercise'} > Login </Button>
+            <Button className={classes.Button}  onClick={() => window.location = '/exercise'} > Exercise </Button>
           </Typography>
           <Typography style={{paddingRight: '3%'}} >
-            <Button  className={classes.Button}  onClick={() => window.location = '/Profile'}> Profile</Button>
+            <Button  className={classes.Button}  onClick={() => window.location = '/profile'}> Profile</Button>
           </Typography>
 			</Toolbar>
 		</AppBar>

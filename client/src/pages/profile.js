@@ -4,7 +4,7 @@ import Navbar from '../components/navbar';
 import Stats from '../components/statistic/statistic';
 
 
-const StatsPage = () => {
+const Profile = () => {
   return (
     <div>
       <Navbar/>
@@ -16,4 +16,4 @@ const StatsPage = () => {
   )
 }
 
-export default StatsPage;
+export default Profile;
