@@ -1,17 +1,14 @@
-  
 .App {
-  background-color: #0C0C0C;
+  background-color: rgb(255, 255, 255);
   height: 100vh;
-
- 
 }
 
 ::-webkit-scrollbar {
   display: none;
 }
-.Body{
-  background-color: #0C0C0C;
-  color: #0C0C0C;
+.Body {
+  background-color: "white";
+  color: "white";
 }
 
 .App-logo {
