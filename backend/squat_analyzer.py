@@ -4,11 +4,16 @@ import cv2 as cv
 import numpy as np
 import argparse
 
+def rescale_frame(frame):
+    dim = (360,360)
+    return cv.resize(frame, dim, interpolation=cv.INTER_AREA)
+
+
 parser = argparse.ArgumentParser()
 parser.add_argument('--input', help='Path to image or video. Skip to capture frames from camera')
 parser.add_argument('--thr', default=0.2, type=float, help='Threshold value for pose parts heat map')
-parser.add_argument('--width', default=368, type=int, help='Resize input to specific width.')
-parser.add_argument('--height', default=368, type=int, help='Resize input to specific height.')
+parser.add_argument('--width', default=360, type=int, help='Resize input to specific width.')
+parser.add_argument('--height', default=360, type=int, help='Resize input to specific height.')
 
 args = parser.parse_args()
 
@@ -30,15 +35,19 @@ net = cv.dnn.readNetFromTensorflow("graph_opt.pb")
 
 cap = cv.VideoCapture('test1.mp4')
 
-while cv.waitKey(1) < 0:
+fourcc = cv.VideoWriter_fourcc(*'MP4V')
+result = cv.VideoWriter('output.mp4',
+                         fourcc,
+                         10, (inWidth, inHeight))
+
+while True:
     hasFrame, frame = cap.read()
     if not hasFrame:
-        cv.waitKey()
         break
+    frame = rescale_frame(frame)
 
     frameWidth = frame.shape[1]
     frameHeight = frame.shape[0]
-
     net.setInput(cv.dnn.blobFromImage(frame, 1.0, (inWidth, inHeight), (127.5, 127.5, 127.5), swapRB=True, crop=False))
     out = net.forward()
     out = out[:, :19, :, :]  # MobileNet output [1, 57, -1, -1], we only need the first 19 elements
@@ -75,6 +84,12 @@ while cv.waitKey(1) < 0:
 
     t, _ = net.getPerfProfile()
     freq = cv.getTickFrequency() / 1000
-    cv.putText(frame, '%.2fms' % (t / freq), (10, 20), cv.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0))
+    result.write(frame)
 
-    cv.imshow('OpenPose using OpenCV', frame)
+result.release()
+cap.release()
+cv.destroyAllWindows()
+
+
+
+
