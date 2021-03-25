@@ -68,7 +68,7 @@ function Landing() {
     <div className={classes.Background}>
       <AppBar position="static" >
         <Toolbar variant="dense" className={classes.navbar}>
-          <img src={Logo} className={classes.navbarLogo}></img>
+          <img src={Logo} className={classes.navbarLogo} alt='logo-1'/>
           <Typography variant="h6" color='primary'>
             Fitform
           </Typography>
@@ -84,7 +84,7 @@ function Landing() {
       <Grid item xs={12}></Grid>
         <Grid container spacing={2} direction="row">
           <Grid item>
-            <img src={Logo} className={classes.logo}></img>
+            <img src={Logo} className={classes.logo} alt='logo-2'/>
           </Grid>
           <Grid item>
             <h1 className={classes.name}>Fitform</h1>

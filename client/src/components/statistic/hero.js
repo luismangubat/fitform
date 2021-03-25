@@ -16,7 +16,7 @@ const Hero = () => {
 
   return (
     <div className={classes.container}>
-      <Typography variant={'h3'} color='secondary'>
+      <Typography variant={'h3'} color='black'>
          Elon Musk
       </Typography>
     </div>

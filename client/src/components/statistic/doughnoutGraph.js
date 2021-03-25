@@ -16,32 +16,36 @@ const useStyles = makeStyles({
     borderRadius: '9px',
     borderColor: 'black',
     background: '#FDFDFD',
-    margin: '0px',
+    paddingLeft: '280px',
+    paddingRight: '280px',
     marginBottom: '50px',
-    marginRight: '0px'
+    textAlign: 'center'
+   
   },
 
   metricContainainer: {
     height: '115px',
-    width: '350px',
+    width: '450px',
     marginBottom: '10px',
     textAlign: 'center',
     lineHeight: '110px',
     alignItems: 'center',
     fontSize: '45px',
-    color: '#263238'
+    color: '#263238',
+    borderRadius: '9px',
 
 
   }, 
 
   boxcContainer: {
     height: '125px',
-    width: '165px',    
+    width: '265px',    
     textAlign: 'center',
     lineHeight: '110px',
     alignItems: 'center',
     fontSize: '45px',
-    color: '#263238'
+    color: '#263238',
+    borderRadius: '9px',
 
 
   },  
@@ -60,7 +64,7 @@ const useStyles = makeStyles({
 })
 
 
-// Add innner Text to Doughnut Graph
+// Add inner Text to Doughnut Graph
 var originalDoughnutDraw = Chart.controllers.doughnut.prototype.draw;
 Chart.helpers.extend(Chart.controllers.doughnut.prototype, {
   draw: function() {
@@ -102,8 +106,8 @@ const DoughnutGraph = () => {
 
   const classes = useStyles()
   return (
-    <Grid container spacing={2}>
-      <Grid item xs={3}>
+    <Grid container spacing={0}>
+      <Grid item xs={6}>
         <Box  boxShadow={1} className={classes.doughnutContainer}>
           <Typography>
             Workout Complete
@@ -114,7 +118,7 @@ const DoughnutGraph = () => {
           <Doughnut data={data}/>
         </Box>
       </Grid>
-      <Grid item xs={9} spacing={2}>
+      <Grid item xs={3} spacing={2}>
         <Box  boxShadow={1} className={classes.metricContainainer}>
           70
         </Box>
@@ -131,7 +135,34 @@ const DoughnutGraph = () => {
           </Grid>
         </Grid>
       </Grid>
-      
+      <Grid item xs={3} spacing={2}>
+          
+      <Grid container>
+          <Grid item >
+              <Box  boxShadow={1} className={classes.boxcContainer}>
+                32
+              </Box>
+          </Grid>
+          <Grid item >
+              <Box  boxShadow={1} className={classes.rightBoxcContainer}>
+                25
+              </Box>
+          </Grid>
+        </Grid>
+
+        <Grid container>
+          <Grid item >
+              <Box  boxShadow={1} className={classes.boxcContainer}>
+                32
+              </Box>
+          </Grid>
+          <Grid item >
+              <Box  boxShadow={1} className={classes.rightBoxcContainer}>
+                25
+              </Box>
+          </Grid>
+        </Grid>
+      </Grid>
     </Grid>
   )
 }

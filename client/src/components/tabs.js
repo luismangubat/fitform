@@ -63,8 +63,13 @@ const useStyles = makeStyles((theme) => ({
   },
   tab: {
     indicator: {
-      backgroundColor: '#DE4922',  
-    }
+      backgroundColor: '#DE4922',
+    },
+
+
+    indicatorColor: '#DE4922',
+    shadows: ["none"]
+    
  
   }
 }));
@@ -79,19 +84,20 @@ export default function Stats(props) {
 
   return (
     <div className={classes.root}>
-      <AppBar position="relative">
+      <AppBar position="relative" elevation={0}>
         <Tabs
-          variant="fullWidth"
+          variant="standard"
           value={value}
           onChange={handleChange}
+          indicatorColor="secondary"
           aria-label="nav tabs example"
-          indicatorColor="#fff"
           background='white'
+          className={classes.tab}
          
         >
-          <LinkTab label="Saved Exercise" href="/drafts" {...a11yProps(0)} />
-          <LinkTab label="Recordings" href="/trash" {...a11yProps(1)} />
-          <LinkTab label="Stats" href="/spam" {...a11yProps(2)} />
+          <LinkTab label="Saved Exercise" href="/exercise" {...a11yProps(0)} />
+          <LinkTab label="Recordings" href="/recordings" {...a11yProps(1)} />
+          <LinkTab label="Stats" href="/stats" {...a11yProps(2)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
@@ -100,7 +106,7 @@ export default function Stats(props) {
       <TabPanel value={value} index={1}>
         Page Two
       </TabPanel>
-      <TabPanel value={value} index={2} className={classes.tabs} indicatorColor="#fff">
+      <TabPanel value={value} index={2}>
         {props.Tab3}
       </TabPanel>
     </div>

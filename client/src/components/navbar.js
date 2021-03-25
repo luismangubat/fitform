@@ -80,7 +80,7 @@ const Navbar = (props) => {
 			}}>
 			<Toolbar>
 
-					<img src={Logo} className={classes.navbarLogo } onClick={() => window.location.href = '/'}></img>
+					<img src={Logo} className={classes.navbarLogo } onClick={() => window.location.href = '/'} alt='logo-3'></img>
 					<Typography  style={{flexGrow:12, color: 'black'}}  width='50px'height='50px' onClick={() => window.location.href = '/'} >
 						Fitform 
 					</Typography>
