@@ -22,11 +22,39 @@ const useStyles = makeStyles({
   },
 
   metricContainainer: {
-    height: '125px',
-    width: '350px'
+    height: '115px',
+    width: '350px',
+    marginBottom: '10px',
+    textAlign: 'center',
+    lineHeight: '110px',
+    alignItems: 'center',
+    fontSize: '45px',
+    color: '#263238'
+
+
   }, 
 
-  metricContainer: {
+  boxcContainer: {
+    height: '125px',
+    width: '165px',    
+    textAlign: 'center',
+    lineHeight: '110px',
+    alignItems: 'center',
+    fontSize: '45px',
+    color: '#263238'
+
+
+  },  
+
+  rightBoxcContainer: {
+    height: '125px',
+    width: '165px',
+    marginLeft: '20px',
+    textAlign: 'center',
+    lineHeight: '110px',
+    alignItems: 'center',
+    fontSize: '45px',
+    color: '#263238'
 
   }
 })
@@ -74,26 +102,36 @@ const DoughnutGraph = () => {
 
   const classes = useStyles()
   return (
-    <Grid container spacing={0}>
+    <Grid container spacing={2}>
       <Grid item xs={3}>
-      <Box  boxShadow={1} className={classes.doughnutContainer}>
-        <Typography>
-          Workout Complete
-        </Typography>
-        <Typography>
-          Leg Day 
-        </Typography>
-        <Doughnut data={data}/>
-      </Box>
+        <Box  boxShadow={1} className={classes.doughnutContainer}>
+          <Typography>
+            Workout Complete
+          </Typography>
+          <Typography>
+            Leg Day 
+          </Typography>
+          <Doughnut data={data}/>
+        </Box>
       </Grid>
-      <Grid item xs={9}>
-      <Box  boxShadow={1} className={classes.metricContainainer}>
-         Metric 1
-      </Box>
-      <Box  boxShadow={1} className={classes.metricContainainer}>
-         Metric 2
-      </Box>
+      <Grid item xs={9} spacing={2}>
+        <Box  boxShadow={1} className={classes.metricContainainer}>
+          70
+        </Box>
+        <Grid container>
+          <Grid item >
+              <Box  boxShadow={1} className={classes.boxcContainer}>
+                32
+              </Box>
+          </Grid>
+          <Grid item >
+              <Box  boxShadow={1} className={classes.rightBoxcContainer}>
+                25
+              </Box>
+          </Grid>
+        </Grid>
       </Grid>
+      
     </Grid>
   )
 }

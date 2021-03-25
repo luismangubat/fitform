@@ -42,7 +42,7 @@ const useStyles = makeStyles({
   tagline: {
     color: 'white',
     paddingLeft: "140px",
-    fontSize: "20px", 
+    fontSize: "30px", 
     fontWeight: "bold",
   },
 
@@ -66,7 +66,7 @@ function Landing() {
   const classes = useStyles();
   return (
     <div className={classes.Background}>
-      <AppBar position="static">
+      <AppBar position="static" >
         <Toolbar variant="dense" className={classes.navbar}>
           <img src={Logo} className={classes.navbarLogo}></img>
           <Typography variant="h6" color='primary'>
@@ -92,8 +92,10 @@ function Landing() {
         </Grid>
         <Grid item xs={6}>
         <p className={classes.tagline}>A personalized coach right in the comfort of your home</p>
-        <Button variant="contained" className={classes.getStarted}>Get Started</Button>
-        <Button className={classes.login}>Log In</Button>
+        <Button variant="contained" className={classes.getStarted} onClick={() => window.location.href = '/stats'}>
+          Get Started
+        </Button>
+
         </Grid>
       </Grid>
     </div>

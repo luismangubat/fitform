@@ -43,11 +43,23 @@ const useStyles = makeStyles({
 	},
 	InputBase: {
 		textAlign: 'center',
-		paddingLeft: '70px'
+		paddingLeft: '70px',
+		
 	}, 
 
 	Button: {
 		textTransform: 'none',
+		marginRight: '10px'
+		
+	},
+	actionButton: {
+		textTransform: 'none',
+		background: '#DE4922',
+		color: 'white',
+		borderRadius: '35px',
+		marginRight: '10px',
+		width: '100px'
+	
 		
 	}
 
@@ -67,12 +79,13 @@ const Navbar = (props) => {
 			position: 'relative'
 			}}>
 			<Toolbar>
-				<img src={Logo} className={classes.navbarLogo}></img>
-				<Typography  style={{flexGrow:12, color: 'black'}}  width='50px'height='50px' >
-					Fitform 
-				</Typography>
+
+					<img src={Logo} className={classes.navbarLogo } onClick={() => window.location.href = '/'}></img>
+					<Typography  style={{flexGrow:12, color: 'black'}}  width='50px'height='50px' onClick={() => window.location.href = '/'} >
+						Fitform 
+					</Typography>
 				<Typography >
-            <Button  className={classes.Button} onClick={() => window.location = '/workout'}> Workout </Button>
+            <Button  className={classes.actionButton} onClick={() => window.location = '/workout'}> Workout </Button>
           </Typography>
           <Typography>
             <Button className={classes.Button}  onClick={() => window.location = '/exercise'} > Login </Button>

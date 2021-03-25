@@ -6,7 +6,7 @@ const useStyles = makeStyles({
 
   Graph: {
     // Change this later
-    height: '500px'
+    height: '700px'
   }
 
 })
