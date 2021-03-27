@@ -102,9 +102,11 @@ export default function Stats(props) {
       </AppBar>
       <TabPanel value={value} index={0}>
         Page One
+        {props.tab1}
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Page Two
+        Page 2 
+        {props.tab2}
       </TabPanel>
       <TabPanel value={value} index={2}>
         {props.Tab3}
