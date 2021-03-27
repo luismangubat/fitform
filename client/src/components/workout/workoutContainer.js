@@ -5,7 +5,7 @@ import LinearProgress from '@material-ui/core/LinearProgress';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
-
+import Button from '@material-ui/core/Button';
 
 
  
@@ -39,22 +39,52 @@ const useStyles = makeStyles({
   },
 
   tagline: {
-    textAlign: 'center'
+     textAlign: 'center',
+     fontWeight: '600'
   }, 
 
 
-  outerContainer: {
-    textAlign: 'center'
+  textBox: {
+
+    width: '100%',
+    background: '#F4F4F4',
+    borderRadius: '10px',
+    marginTop: '76px'
   },
 
   videoContainer:  {
     border: '1px solid #fff',
     width: '500px',
-    height: '250px',
+    height: '300px',
     borderColor: 'black',
     textAlign: 'center',
-    marginTop: '50px'
+    marginTop: '50px',
+    justifyContent: 'center',
+    marginLeft:'50px'
 
+  },
+
+  header: {
+    paddingLeft: '15px',
+    color: '#1E1E1E'
+  },
+
+  actionButton: {
+    textAlign: 'center',
+    background: '#DE4922',
+    height: '50px',
+    width: '180px',
+    borderRadius: '10px',
+    color: 'white',
+    fontSize: '18px',
+    border: 'none',
+    marginTop: '25px',
+    marginBottom: '10px'
+  },
+
+  buttonContainer: {
+    width: '100%',
+    textAlign: 'center'
   }
 });
 
@@ -62,20 +92,32 @@ export default function WorkoutContainer() {
   const classes = useStyles();
   const [progress, setProgress] = React.useState(10);
   const [playing, setPlaying] = useState(false);
-  const HEIGHT = 500;
-  const WIDTH = 750;
+  const HEIGHT = 300;
+  const WIDTH = 500;
+  const embedId = 'popGXI-qs98'
 
-  const startVideo = () => {
-    setPlaying(true)
-
-
-  }
-
+	const startVideo = () => {
+		setPlaying(true);
+		navigator.getUserMedia(
+			{
+				video: true,
+			},
+			(stream) => {
+				let video = document.getElementsByClassName('app__videoFeed')[0];
+				if (video) {
+					video.srcObject = stream;
+				}
+			},
+			(err) => console.error(err)
+		);
+	};
   
-  const stopVideo = () => {
-    
 
-  }
+	const stopVideo = () => {
+		setPlaying(false);
+		let video = document.getElementsByClassName('app__videoFeed')[0];
+		video.srcObject.getTracks()[0].stop();
+	};
 
   React.useEffect(() => {
     const timer = setInterval(() => {
@@ -94,28 +136,48 @@ export default function WorkoutContainer() {
       <LinearProgressWithLabel value={progress} color='secondary' />
 
       <Grid container spacing={2}>
-        <Grid item md={6}>
-          <div></div>
-          <video className={classes.videoContainer}>
-
-          </video>
-          
-        </Grid>
-        <Grid item md={6}>
-          
+        <Grid item xs={12} md={6}>
+          <div className={classes.videoContainer}>
             <video
-            className={classes.videoContainer}
-            height={HEIGHT}
-            width={WIDTH}>
-
-            </video>
-            <div> 
-              {playing ? (
-              <button onCLick={stopVideo}>Stop</button>
-              ) : (
-              <button onCLick={startVideo}> Start</button>)}
+                height={HEIGHT}
+                width={WIDTH}
+                className='app__videoFeed'
+                muted
+                autoPlay>
+                </video>
             </div>
         </Grid>
+        <Grid item xs={12} md={6}> 
+          <div className={classes.videoContainer}>
+            <iframe
+              width="500"
+              height="300"
+              src={`https://www.youtube.com/embed/${embedId}`}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              title="Embedded youtube"
+            />
+          </div>
+        </Grid>
+
+        <div className={classes.textBox}>
+          <h1 className={classes.header}> Tricep Dips Instructions </h1>
+          <ul>
+            <li>Be sure to keep your elbows straight behind you versus splaying them outward.</li>
+            <li>Resist shrugging your shoulders — keep them neutral with your neck relaxed.</li>
+            <li>Increase the difficulty of this exercise by straightening your legs and placing only your heels on the floor instead of the whole foot.</li>
+          </ul>      
+        </div>
+        <div className={classes.buttonContainer}>       
+          <div className="app__input">
+                {playing ? (
+                  <Button onClick={stopVideo} className={classes.actionButton}>Stop</Button>
+                ) : (
+                  <Button onClick={startVideo} className={classes.actionButton}>Start</Button>
+                )}
+          </div>
+        </div>
       </Grid>
     </div>
   );

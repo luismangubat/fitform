@@ -6,7 +6,7 @@ const useStyles = makeStyles({
 
   Graph: {
     // Change this later
-    height: '700px'
+    height: '600px'
   }
 
 })
@@ -43,7 +43,7 @@ const Graph = () => {
           options={{
             title:{
               display:true,
-              text:'Weekly ',
+              text:'Weekly Performance',
               fontSize:20
             },
             legend:{

@@ -5,9 +5,6 @@ import Profile from './pages/profile';
 import Workout from './pages/workout';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-
-
-
 function App() {
   return (
     <div className='App'>

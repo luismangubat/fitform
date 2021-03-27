@@ -10,14 +10,12 @@ import Grid from '@material-ui/core/Grid';
 const useStyles = makeStyles({
 
   doughnutContainer: {
-    width: '350px',
+    width: '300px',
     height: '250px',
     filter: 'drop-shadow(0px 9.03012px 27.0904px rgba(176, 190, 197, 0.32)), drop-shadow(0px 3.38629px 5.64383px rgba(176, 190, 197, 0.32))',
     borderRadius: '9px',
     borderColor: 'black',
     background: '#FDFDFD',
-    paddingLeft: '280px',
-    paddingRight: '280px',
     marginBottom: '50px',
     textAlign: 'center'
    
@@ -25,10 +23,10 @@ const useStyles = makeStyles({
 
   metricContainainer: {
     height: '115px',
-    width: '450px',
+    width: '350px',
     marginBottom: '10px',
     textAlign: 'center',
-    lineHeight: '110px',
+    lineHeight: '90px',
     alignItems: 'center',
     fontSize: '45px',
     color: '#263238',
@@ -39,7 +37,7 @@ const useStyles = makeStyles({
 
   boxcContainer: {
     height: '125px',
-    width: '265px',    
+    width: '165px',    
     textAlign: 'center',
     lineHeight: '110px',
     alignItems: 'center',
@@ -58,9 +56,40 @@ const useStyles = makeStyles({
     lineHeight: '110px',
     alignItems: 'center',
     fontSize: '45px',
-    color: '#263238'
+    color: '#263238',
+    borderRadius: '9px',
 
+  }, 
+  metricDescription: {
+    fontSize: '12px',
+    textAlign: 'left',
+    marginRight: '40px',
+    bottom: '0',
+    marginLeft: '5px',
+    paddingBottom: '10px'
+  },
+  metric: {
+    height: '20px',
+    width: '165px',
+    paddingBottom: '35px',
+    color: '#263238'
+  
+  },
+
+  metric2: {
+    height: '20px',
+    width: '350px',
+    paddingBottom: '35px',
+    color: '#263238'
+  
+  },
+
+  container: {
+   
+    display: 'flex',
+    justifyContent: 'center'
   }
+
 })
 
 
@@ -106,62 +135,80 @@ const DoughnutGraph = () => {
 
   const classes = useStyles()
   return (
-    <Grid container spacing={0}>
-      <Grid item xs={6}>
-        <Box  boxShadow={1} className={classes.doughnutContainer}>
-          <Typography>
-            Workout Complete
-          </Typography>
-          <Typography>
-            Leg Day 
-          </Typography>
-          <Doughnut data={data}/>
-        </Box>
+    <Grid container spacing={0} alignItems={'center'} >
+      <Grid item xs={12} md={4}>
+        <div className={classes.container}>
+          <Box  boxShadow={1} className={classes.doughnutContainer}>
+            <Typography>
+              Workout Complete
+            </Typography>
+            <Typography>
+              Leg Day 
+            </Typography>
+            <Doughnut data={data}/>
+          </Box>
+        </div>
       </Grid>
-      <Grid item xs={3} spacing={2}>
+      <Grid item xs={12} md={4} spacing={0} >
+        <div className={classes.container}>
         <Box  boxShadow={1} className={classes.metricContainainer}>
-          70
+        <div className={classes.metric2}> 340 </div>
+        <div className={classes.metricDescription}> Total Reps Overall</div>
         </Box>
+        </div>
         <Grid container>
+        <div className={classes.container}>
           <Grid item >
               <Box  boxShadow={1} className={classes.boxcContainer}>
-                32
+              <div className={classes.metric}> 25</div>
+              <div className={classes.metricDescription}> Total Squat</div>
               </Box>
           </Grid>
           <Grid item >
               <Box  boxShadow={1} className={classes.rightBoxcContainer}>
-                25
+                <div className={classes.metric}> 25</div>
+                <div className={classes.metricDescription}> Total Squat</div>
               </Box>
+             
           </Grid>
+          </div>
         </Grid>
       </Grid>
-      <Grid item xs={3} spacing={2}>
+      <Grid item xs={12} md={4} spacing={2}>
           
       <Grid container>
-          <Grid item >
-              <Box  boxShadow={1} className={classes.boxcContainer}>
-                32
-              </Box>
+        <div className={classes.container}>
+            <Grid item >
+                <Box  boxShadow={1} className={classes.boxcContainer}>
+                <div className={classes.metric}> 123</div>
+                  <div className={classes.metricDescription}> Total Situps</div>
+                </Box>
+            </Grid>
+            <Grid item >
+                <Box  boxShadow={1} className={classes.rightBoxcContainer}>
+                <div className={classes.metric}> 25</div>
+                  <div className={classes.metricDescription}> Total Dips</div>
+                </Box>
+            </Grid>
+            </div>
           </Grid>
-          <Grid item >
-              <Box  boxShadow={1} className={classes.rightBoxcContainer}>
-                25
-              </Box>
-          </Grid>
-        </Grid>
 
-        <Grid container>
-          <Grid item >
-              <Box  boxShadow={1} className={classes.boxcContainer}>
-                32
-              </Box>
+          <Grid container>
+          <div className={classes.container}>
+            <Grid item >
+                <Box  boxShadow={1} className={classes.boxcContainer}>
+                <div className={classes.metric}> 25</div>
+                  <div className={classes.metricDescription}> Total Situps</div>
+                </Box>
+            </Grid>
+            <Grid item >
+                <Box  boxShadow={1} className={classes.rightBoxcContainer}>
+                <div className={classes.metric}> 25</div>
+                  <div className={classes.metricDescription}> Total Duration Planks</div>
+                </Box>
+            </Grid>
+            </div>
           </Grid>
-          <Grid item >
-              <Box  boxShadow={1} className={classes.rightBoxcContainer}>
-                25
-              </Box>
-          </Grid>
-        </Grid>
       </Grid>
     </Grid>
   )
