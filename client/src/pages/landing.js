@@ -6,9 +6,10 @@ import Logo from '../assets/fitform logo.svg';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
+import { useMediaQuery } from '@material-ui/core';
+import {  useTheme } from '@material-ui/core';
 
-
-const useStyles = makeStyles({
+const useStyles = makeStyles( theme => ({
 	
 	Background: {
     backgroundImage: `url(${Image})`,
@@ -23,7 +24,8 @@ const useStyles = makeStyles({
   },
 
   navbar: {
-    backgroundColor: "black",
+  background: 'rgba(204, 204, 204, 0)',
+  position:"fixed"
   },
 
   logo: {
@@ -44,6 +46,9 @@ const useStyles = makeStyles({
     paddingLeft: "140px",
     fontSize: "30px", 
     fontWeight: "bold",
+    [theme.breakpoints.up('sm')]: {
+      fontSize: '20px',
+    },
   },
 
   getStarted: {
@@ -59,11 +64,13 @@ const useStyles = makeStyles({
     color: "#FFFFFF",
     fontWeight: "bold",
   }
-});
+}));
 
 function Landing() {
 
   const classes = useStyles();
+  const theme = useTheme();
+  const minimizeText = useMediaQuery(theme.breakpoints.up('sm'));
   return (
     <div className={classes.Background}>
       <AppBar position="static" >
@@ -91,7 +98,7 @@ function Landing() {
           </Grid>
         </Grid>
         <Grid item xs={6}>
-        <p className={classes.tagline}>A personalized coach right in the comfort of your home</p>
+         {minimizeText && <p className={classes.tagline}> A personalized coach right in the comfort of your home </p> }
         <Button variant="contained" className={classes.getStarted} onClick={() => window.location.href = '/workout'}>
           Get Started
         </Button>
