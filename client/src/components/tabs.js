@@ -7,19 +7,15 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 
-
-
-
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
   return (
     <div
-      role="tabpanel"
+      role='tabpanel'
       hidden={value !== index}
       id={`nav-tabpanel-${index}`}
       aria-labelledby={`nav-tab-${index}`}
-      
       {...other}
     >
       {value === index && (
@@ -47,7 +43,7 @@ function a11yProps(index) {
 function LinkTab(props) {
   return (
     <Tab
-      component="a"
+      component='a'
       onClick={(event) => {
         event.preventDefault();
       }}
@@ -66,12 +62,9 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: '#DE4922',
     },
 
-
     indicatorColor: '#DE4922',
-    shadows: ["none"]
-    
- 
-  }
+    shadows: ['none'],
+  },
 }));
 
 export default function Stats(props) {
@@ -84,29 +77,26 @@ export default function Stats(props) {
 
   return (
     <div className={classes.root}>
-      <AppBar position="relative" elevation={0}>
+      <AppBar position='relative' elevation={0}>
         <Tabs
-          variant="standard"
+          variant='standard'
           value={value}
           onChange={handleChange}
-          indicatorColor="secondary"
-          aria-label="nav tabs example"
+          indicatorColor='secondary'
+          aria-label='nav tabs example'
           background='white'
           className={classes.tab}
-         
         >
-          <LinkTab label="Saved Exercise" href="/exercise" {...a11yProps(0)} />
-          <LinkTab label="Recordings" href="/recordings" {...a11yProps(1)} />
-          <LinkTab label="Stats" href="/stats" {...a11yProps(2)} />
+          <LinkTab label='Saved Exercise' href='/exercise' {...a11yProps(0)} />
+          <LinkTab label='Recordings' href='/recordings' {...a11yProps(1)} />
+          <LinkTab label='Stats' href='/stats' {...a11yProps(2)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        Page One
-        {props.tab1}
+        {props.Tab1}
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Page 2 
-        {props.tab2}
+        {props.Tab2}
       </TabPanel>
       <TabPanel value={value} index={2}>
         {props.Tab3}
