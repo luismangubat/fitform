@@ -6,7 +6,8 @@ const useStyles = makeStyles({
 
   container: {
     paddingTop: '20px',
-    paddingBottom: '10px'
+    paddingBottom: '30px',
+    paddingLeft: '20px'
   }
 });
 

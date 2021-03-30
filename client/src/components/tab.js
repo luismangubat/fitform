@@ -95,7 +95,7 @@ export default function SingleTab(props) {
           className={classes.tab}
          
         >
-          <LinkTab label="Workout" href="/workout" {...a11yProps(0)} />
+          <LinkTab label={props.tabName} href="/workout" {...a11yProps(0)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>

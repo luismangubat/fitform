@@ -8,6 +8,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { useMediaQuery } from '@material-ui/core';
 import {  useTheme } from '@material-ui/core';
+import styles from  '../utils/landing.module.css'
 
 const useStyles = makeStyles( theme => ({
 	
@@ -39,6 +40,10 @@ const useStyles = makeStyles( theme => ({
   name: {
     color: 'white',
     paddingTop: "45px",  
+    transition: theme.transitions.create(
+      ['border-color', 'color', 'opacity'],
+      { duration: theme.transitions.duration.complex }
+    ),
   }, 
 
   tagline: {
@@ -94,12 +99,14 @@ function Landing() {
             <img src={Logo} className={classes.logo} alt='logo-2'/>
           </Grid>
           <Grid item>
+          
             <h1 className={classes.name}>Fitform</h1>
+        
           </Grid>
         </Grid>
         <Grid item xs={6}>
          {minimizeText && <p className={classes.tagline}> A personalized coach right in the comfort of your home </p> }
-        <Button variant="contained" className={classes.getStarted} onClick={() => window.location.href = '/workout'}>
+        <Button variant="contained" className={classes.getStarted} onClick={() => window.location.href = '/exercise'}>
           Get Started
         </Button>
 

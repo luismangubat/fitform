@@ -9,6 +9,7 @@ const Workout = () => {
     <div>
       <Navbar/>
       <Tab
+      tabName='Workout'
       tab1={<WorkoutContainer/>}/>
       
     </div>

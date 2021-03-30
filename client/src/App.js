@@ -4,6 +4,7 @@ import Landing from './pages/landing';
 import Profile from './pages/profile';
 import Workout from './pages/workout';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import ExercisePage from './pages/exercise';
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
             <Workout/>
           </Route>
         </Switch>
+        <Route exact path='/exercise'>
+            <ExercisePage/>
+          </Route>
       </BrowserRouter>
     </div>
   );

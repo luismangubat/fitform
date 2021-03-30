@@ -6,19 +6,33 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
+import {  withStyles } from '@material-ui/core/styles';
 
+
+const BorderLinearProgress = withStyles((theme) => ({
+  root: {
+    height: 10,
+    borderRadius: 5,
+  },
+  colorPrimary: {
+    backgroundColor: theme.palette.grey[theme.palette.type === 'light' ? 200 : 700],
+  },
+  bar: {
+    borderRadius: 5,
+    backgroundColor: '#DE4922',
+  },
+}))(LinearProgress);
 
  
 function LinearProgressWithLabel(props) {
+
   return (
     <Box display="flex" alignItems="center">
-      <Box width="100%" mr={1}>
-        <LinearProgress variant="determinate" {...props} />
+      <Box width="100%" >
+        <BorderLinearProgress value={37} variant="determinate"/>
       </Box>
-      <Box minWidth={35}>
-        <Typography variant="body2" color="textSecondary">{`${Math.round(
-          props.value,
-        )}%`}</Typography>
+      <Box minWidth={37}>
+        <Typography variant="body2" color="textSecondary">{`37%`}</Typography>
       </Box>
     </Box>
   );
@@ -45,7 +59,6 @@ const useStyles = makeStyles({
 
 
   textBox: {
-
     width: '100%',
     background: '#F4F4F4',
     borderRadius: '10px',
@@ -59,8 +72,8 @@ const useStyles = makeStyles({
     borderColor: 'black',
     textAlign: 'center',
     marginTop: '50px',
-    justifyContent: 'center',
-    marginLeft:'50px'
+
+
 
   },
 
@@ -79,12 +92,24 @@ const useStyles = makeStyles({
     fontSize: '18px',
     border: 'none',
     marginTop: '25px',
-    marginBottom: '10px'
+    marginBottom: '10px',
+    '&:hover': {
+			backgroundColor: '#E57F64',
+			color: '#FFF'
+		}
+	
   },
 
   buttonContainer: {
     width: '100%',
     textAlign: 'center'
+  },
+
+  gridContainer: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center'
+  
   }
 });
 
@@ -119,14 +144,6 @@ export default function WorkoutContainer() {
 		video.srcObject.getTracks()[0].stop();
 	};
 
-  React.useEffect(() => {
-    const timer = setInterval(() => {
-      setProgress((prevProgress) => (prevProgress >= 100 ? 10 : prevProgress + 10));
-    }, 800);
-    return () => {
-      clearInterval(timer);
-    };
-  }, []);
 
   return (
     <div className={classes.root}>
@@ -134,10 +151,10 @@ export default function WorkoutContainer() {
       Mastery: Progress for mastering the exercise 
       </div>
       <LinearProgressWithLabel value={progress} color='secondary' />
-
-      <Grid container spacing={2}>
-        <Grid item xs={12} md={6}>
-          <div className={classes.videoContainer}>
+      <Grid container spacing={2} >
+        <Grid item xs={12} md={6} justify={'center'}>
+          <div className={classes.gridContainer}>      
+            <div className={classes.videoContainer} >
             <video
                 height={HEIGHT}
                 width={WIDTH}
@@ -146,8 +163,10 @@ export default function WorkoutContainer() {
                 autoPlay>
                 </video>
             </div>
+            </div>
         </Grid>
         <Grid item xs={12} md={6}> 
+          <div className={classes.gridContainer}>
           <div className={classes.videoContainer}>
             <iframe
               width="500"
@@ -158,6 +177,7 @@ export default function WorkoutContainer() {
               allowFullScreen
               title="Embedded youtube"
             />
+          </div>
           </div>
         </Grid>
 

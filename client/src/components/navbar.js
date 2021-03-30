@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles, fade, } from '@material-ui/core/styles';
+import { makeStyles, fade, createMuiTheme } from '@material-ui/core/styles';
 import { Typography,  AppBar, Toolbar, Button } from '@material-ui/core';
 import Logo from '../assets/fitform logo.svg';
 
@@ -28,6 +28,8 @@ const useStyles = makeStyles({
 		width:"200px",
 		backgroundColor: fade('#0C0C0C', 0.2),
 		borderRadius: '15px',
+
+
     '&:hover': {
       backgroundColor: fade('#FFFFF', 0.2),
     },
@@ -58,13 +60,26 @@ const useStyles = makeStyles({
 		color: 'white',
 		borderRadius: '35px',
 		marginRight: '10px',
-		width: '100px'
+		width: '100px',
+		'&:hover': {
+			backgroundColor: '#DE4922',
+			color: '#FFF'
+		}
 	
 		
-	}
+	},
 
 });
 
+
+const titleFont = createMuiTheme({
+  typography: {
+    fontFamily: [
+      'IBM Plex Serif',
+      'sans-serif',
+    ].join(','),
+	}
+})
 
 
 // Main Navbar for 
@@ -81,7 +96,7 @@ const Navbar = (props) => {
 			<Toolbar>
 
 					<img src={Logo} className={classes.navbarLogo } onClick={() => window.location.href = '/'} alt='logo-3'></img>
-					<Typography  style={{flexGrow:12, color: 'black'}}  width='50px'height='50px' onClick={() => window.location.href = '/'} >
+					<Typography titleFont  style={{flexGrow:12, color: 'black'}}  width='50px'height='50px' onClick={() => window.location.href = '/'} >
 						Fitform 
 					</Typography>
 				<Typography >

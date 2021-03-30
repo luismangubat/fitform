@@ -5,41 +5,47 @@ import { Doughnut } from "react-chartjs-2";
 import Box from '@material-ui/core/Box';
 import Chart from "chart.js";
 import Grid from '@material-ui/core/Grid';
-
+import Graph from './graph';
 
 const useStyles = makeStyles({
 
   doughnutContainer: {
-    width: '300px',
-    height: '250px',
+    width: '350px',
+    height: '350px',
     filter: 'drop-shadow(0px 9.03012px 27.0904px rgba(176, 190, 197, 0.32)), drop-shadow(0px 3.38629px 5.64383px rgba(176, 190, 197, 0.32))',
     borderRadius: '9px',
     borderColor: 'black',
     background: '#FDFDFD',
     marginBottom: '50px',
-    textAlign: 'center'
+    textAlign: 'center',
+    justifyContent: 'center',
+    marginTop: '40px'
    
   },
 
+  doughnutTitle: { 
+    textAlign: 'left',
+    paddingLeft: '10px',
+    paddingBottom: '50px'
+  },
   metricContainainer: {
-    height: '115px',
+    height: '155px',
     width: '350px',
-    marginBottom: '10px',
+    marginBottom: '30px',
     textAlign: 'center',
-    lineHeight: '90px',
+    lineHeight: '160px',
     alignItems: 'center',
     fontSize: '45px',
     color: '#263238',
     borderRadius: '9px',
 
-
   }, 
 
   boxcContainer: {
-    height: '125px',
-    width: '165px',    
+    height: '160px',
+    width: '160px',    
     textAlign: 'center',
-    lineHeight: '110px',
+    lineHeight: '175px',
     alignItems: 'center',
     fontSize: '45px',
     color: '#263238',
@@ -48,16 +54,45 @@ const useStyles = makeStyles({
 
   },  
 
-  rightBoxcContainer: {
-    height: '125px',
-    width: '165px',
-    marginLeft: '20px',
+  boxcContainer2: {
+    height: '160px',
+    width: '160px',    
     textAlign: 'center',
-    lineHeight: '110px',
+    lineHeight: '175px',
     alignItems: 'center',
     fontSize: '45px',
     color: '#263238',
     borderRadius: '9px',
+    marginBottom: '30px'
+
+
+  },  
+
+
+  rightBoxcContainer: {
+    height: '160px',
+    width: '160px',
+    marginLeft: '20px',
+    textAlign: 'center',
+    lineHeight: '175px',
+    alignItems: 'center',
+    fontSize: '45px',
+    color: '#263238',
+    borderRadius: '9px',
+
+  }, 
+
+  rightBoxcContainer2: {
+    height: '160px',
+    width: '160px',
+    marginLeft: '20px',
+    textAlign: 'center',
+    lineHeight: '175px',
+    alignItems: 'center',
+    fontSize: '45px',
+    color: '#263238',
+    borderRadius: '9px',
+    marginBottom: '30px'
 
   }, 
   metricDescription: {
@@ -85,10 +120,21 @@ const useStyles = makeStyles({
   },
 
   container: {
-   
     display: 'flex',
     justifyContent: 'center'
+  },
+
+  outerContainer: {
+   
+    justifyContent: 'center',
+    display: 'flex',
+ 
+  },
+
+  gridContainer: {
+    paddingBottom: '60px'
   }
+
 
 })
 
@@ -135,82 +181,70 @@ const DoughnutGraph = () => {
 
   const classes = useStyles()
   return (
-    <Grid container spacing={0} alignItems={'center'} >
-      <Grid item xs={12} md={4}>
+    <Grid container spacing={0} alignItems={'center'} className={classes.gridContainer}>
+      <Grid item sm={12} lg={4}>
         <div className={classes.container}>
           <Box  boxShadow={1} className={classes.doughnutContainer}>
+            <div className={classes.doughnutTitle}>
             <Typography>
               Workout Complete
             </Typography>
             <Typography>
               Leg Day 
             </Typography>
+            </div>
             <Doughnut data={data}/>
           </Box>
         </div>
       </Grid>
-      <Grid item xs={12} md={4} spacing={0} >
-        <div className={classes.container}>
-        <Box  boxShadow={1} className={classes.metricContainainer}>
-        <div className={classes.metric2}> 340 </div>
-        <div className={classes.metricDescription}> Total Reps Overall</div>
-        </Box>
+
+      <Grid item sm={12} lg={4}>
+        <div className={classes.outerContainer}>
+          <Box  boxShadow={1} className={classes.metricContainainer}>
+            <div className={classes.metric2}> 340 </div>
+            <div className={classes.metricDescription}> Total Reps Overall</div>
+          </Box>
         </div>
-        <Grid container>
-        <div className={classes.container}>
-          <Grid item >
+
+          <div className={classes.outerContainer}>
               <Box  boxShadow={1} className={classes.boxcContainer}>
-              <div className={classes.metric}> 25</div>
-              <div className={classes.metricDescription}> Total Squat</div>
-              </Box>
-          </Grid>
-          <Grid item >
-              <Box  boxShadow={1} className={classes.rightBoxcContainer}>
                 <div className={classes.metric}> 25</div>
                 <div className={classes.metricDescription}> Total Squat</div>
               </Box>
-             
-          </Grid>
-          </div>
-        </Grid>
-      </Grid>
-      <Grid item xs={12} md={4} spacing={2}>
-          
-      <Grid container>
-        <div className={classes.container}>
-            <Grid item >
-                <Box  boxShadow={1} className={classes.boxcContainer}>
-                <div className={classes.metric}> 123</div>
-                  <div className={classes.metricDescription}> Total Situps</div>
-                </Box>
-            </Grid>
-            <Grid item >
-                <Box  boxShadow={1} className={classes.rightBoxcContainer}>
+              <Box  boxShadow={1} className={classes.rightBoxcContainer}>
                 <div className={classes.metric}> 25</div>
-                  <div className={classes.metricDescription}> Total Dips</div>
-                </Box>
-            </Grid>
-            </div>
-          </Grid>
+                <div className={classes.metricDescription}> Total Pushups</div>
+              </Box>
+     
+          </div>   
+      </Grid>  
 
-          <Grid container>
-          <div className={classes.container}>
-            <Grid item >
-                <Box  boxShadow={1} className={classes.boxcContainer}>
-                <div className={classes.metric}> 25</div>
-                  <div className={classes.metricDescription}> Total Situps</div>
-                </Box>
-            </Grid>
-            <Grid item >
-                <Box  boxShadow={1} className={classes.rightBoxcContainer}>
-                <div className={classes.metric}> 25</div>
-                  <div className={classes.metricDescription}> Total Duration Planks</div>
-                </Box>
-            </Grid>
-            </div>
-          </Grid>
-      </Grid>
+      <Grid item sm={12} lg={4}>
+          <div className={classes.outerContainer}>
+              <Box  boxShadow={1} className={classes.boxcContainer2}>
+                <div className={classes.metric}> 70</div>
+                <div className={classes.metricDescription}> Total Dips</div>
+              </Box>
+              <Box  boxShadow={1} className={classes.rightBoxcContainer2}>
+                <div className={classes.metric}> 125</div>
+                <div className={classes.metricDescription}> Total Situps</div>
+              </Box>
+    
+          </div>   
+
+          <div className={classes.outerContainer}>
+              <Box  boxShadow={1} className={classes.boxcContainer2}>
+                <div className={classes.metric}> 57 </div>
+                <div className={classes.metricDescription}> Total Pullups</div>
+              </Box>
+              <Box  boxShadow={1} className={classes.rightBoxcContainer2}>
+                <div className={classes.metric}> 80 </div>
+                <div className={classes.metricDescription}> Total Lunges</div>
+              </Box>
+          </div>   
+        </Grid>
     </Grid>
+
   )
 }
 
