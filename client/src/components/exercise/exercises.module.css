@@ -11,6 +11,10 @@
   position: relative;
 }
 
+a {
+  text-decoration: none;
+}
+
 .Exercise h2 {
   z-index: 10;
   font-weight: 600;
