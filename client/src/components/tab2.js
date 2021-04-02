@@ -6,6 +6,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import { Button } from '@material-ui/core';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -88,7 +89,7 @@ export default function Stats(props) {
           className={classes.tab}
         >
           <LinkTab label={props.label1} href='/exercise' {...a11yProps(0)} />
-          <LinkTab label={props.label2} href='/record' {...a11yProps(1)} />
+          <LinkTab label={props.label2} href='/record' {...a11yProps(1)} />      
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>

@@ -49,10 +49,13 @@ const useStyles = makeStyles( theme => ({
   tagline: {
     color: 'white',
     paddingLeft: "140px",
-    fontSize: "30px", 
+    fontSize: "55px", 
     fontWeight: "bold",
-    [theme.breakpoints.up('sm')]: {
-      fontSize: '20px',
+    [theme.breakpoints.up('xs')]: {
+      fontSize: '24px',
+    },
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '40px',
     },
   },
 
@@ -61,6 +64,13 @@ const useStyles = makeStyles( theme => ({
     color: "#FFFFFF",
     marginTop: "50px",
     marginLeft: "120px",
+    width: '200px',
+    height: '50px',
+    fontWeight: '500',
+    fontSize: '18px',
+    "&:hover": {
+      backgroundColor: 'rgb(245, 122, 90, 1)'
+    }
   },
 
   login: {

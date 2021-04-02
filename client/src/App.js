@@ -3,6 +3,7 @@ import './App.css';
 import Landing from './pages/landing';
 import Profile from './pages/profile';
 import Workout from './pages/workout';
+import Record from './pages/record';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ExercisePage from './pages/exercise';
 
@@ -20,10 +21,15 @@ function App() {
           <Route exact path='/workout'>
             <Workout/>
           </Route>
-        </Switch>
-        <Route exact path='/exercise'>
+
+          <Route exact path='/exercise'>
             <ExercisePage/>
           </Route>
+          <Route exact path='/record'>
+            <Record/>
+          </Route>
+        </Switch>
+
       </BrowserRouter>
     </div>
   );

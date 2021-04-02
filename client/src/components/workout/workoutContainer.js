@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import {  withStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
 //import RecordingComponent from './recordingComponent';
 
 
@@ -180,6 +181,7 @@ export default function WorkoutContainer() {
           </ul>      
         </div>
         <div className={classes.buttonContainer}>       
+        <Button className={classes.actionButton} href="/record">Record</Button>
 
         </div>
       </Grid>

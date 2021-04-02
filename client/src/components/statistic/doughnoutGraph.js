@@ -18,14 +18,27 @@ const useStyles = makeStyles({
     marginBottom: '50px',
     textAlign: 'center',
     justifyContent: 'center',
-    marginTop: '40px'
+    marginTop: '40px',
+    backdropFilter: 'blur(3px)',
+
+  
+   
    
   },
 
   doughnutTitle: { 
     textAlign: 'left',
     paddingLeft: '10px',
-    paddingBottom: '50px'
+    paddingBottom: '50px',
+    color: '#263238',
+    fontSize: '15px',
+  },
+
+  doughtnutDesc: { 
+    textAlign: 'left',
+    paddingLeft: '10px',
+    color: '#263238',
+    fontSize: '20px',
   },
   metricContainainer: {
     height: '155px',
@@ -35,7 +48,7 @@ const useStyles = makeStyles({
     lineHeight: '160px',
     alignItems: 'center',
     fontSize: '45px',
-    color: '#607D8B',
+    color: '#25546B',
     borderRadius: '9px',
     
 
@@ -97,13 +110,13 @@ const useStyles = makeStyles({
 
   }, 
   metricDescription: {
-    fontSize: '12px',
+    fontSize: '14px',
     textAlign: 'left',
     marginRight: '40px',
     bottom: '0',
     marginLeft: '5px',
     paddingBottom: '10px',
-    color: '#607D8B',
+    color: '#25546B',
     fontWeight: '600'
   },
   metric: {
@@ -187,12 +200,12 @@ const DoughnutGraph = () => {
     <Grid container spacing={0} alignItems={'center'} className={classes.gridContainer}>
       <Grid item sm={12} lg={4}>
         <div className={classes.container}>
-          <Box  boxShadow={1} className={classes.doughnutContainer}>
-            <div className={classes.doughnutTitle}>
-            <Typography>
+          <Box  boxShadow={3} className={classes.doughnutContainer}>
+            <div varian={'h1'}className={classes.doughnutTitle}>
+            <Typography className={classes.doughtnutDesc}>
               Workout Complete
             </Typography>
-            <Typography>
+            <Typography className={classes.doughtnutDesc}>
               Leg Day 
             </Typography>
             </div>
@@ -203,18 +216,18 @@ const DoughnutGraph = () => {
 
       <Grid item sm={12} lg={4}>
         <div className={classes.outerContainer}>
-          <Box  boxShadow={1} className={classes.metricContainainer}>
+          <Box  boxShadow={3} className={classes.metricContainainer}>
             <div className={classes.metric2}> 340 </div>
             <div className={classes.metricDescription}> Total Reps Overall</div>
           </Box>
         </div>
 
           <div className={classes.outerContainer}>
-              <Box  boxShadow={1} className={classes.boxcContainer}>
+              <Box  boxShadow={3} className={classes.boxcContainer}>
                 <div className={classes.metric}> 25</div>
                 <div className={classes.metricDescription}> Total Squat</div>
               </Box>
-              <Box  boxShadow={1} className={classes.rightBoxcContainer}>
+              <Box  boxShadow={3} className={classes.rightBoxcContainer}>
                 <div className={classes.metric}> 25</div>
                 <div className={classes.metricDescription}> Total Pushups</div>
               </Box>
@@ -224,11 +237,11 @@ const DoughnutGraph = () => {
 
       <Grid item sm={12} lg={4}>
           <div className={classes.outerContainer}>
-              <Box  boxShadow={1} className={classes.boxcContainer2}>
+              <Box  boxShadow={3} className={classes.boxcContainer2}>
                 <div className={classes.metric}> 70</div>
                 <div className={classes.metricDescription}> Total Dips</div>
               </Box>
-              <Box  boxShadow={1} className={classes.rightBoxcContainer2}>
+              <Box  boxShadow={3} className={classes.rightBoxcContainer2}>
                 <div className={classes.metric}> 125</div>
                 <div className={classes.metricDescription}> Total Situps</div>
               </Box>
@@ -236,11 +249,11 @@ const DoughnutGraph = () => {
           </div>   
 
           <div className={classes.outerContainer}>
-              <Box  boxShadow={1} className={classes.boxcContainer2}>
+              <Box  boxShadow={3} className={classes.boxcContainer2}>
                 <div className={classes.metric}> 57 </div>
                 <div className={classes.metricDescription}> Total Pullups</div>
               </Box>
-              <Box  boxShadow={1} className={classes.rightBoxcContainer2}>
+              <Box  boxShadow={3} className={classes.rightBoxcContainer2}>
                 <div className={classes.metric}> 80 </div>
                 <div className={classes.metricDescription}> Total Lunges</div>
               </Box>
