@@ -5,7 +5,6 @@ import { Doughnut } from "react-chartjs-2";
 import Box from '@material-ui/core/Box';
 import Chart from "chart.js";
 import Grid from '@material-ui/core/Grid';
-import Graph from './graph';
 
 const useStyles = makeStyles({
 
@@ -36,8 +35,10 @@ const useStyles = makeStyles({
     lineHeight: '160px',
     alignItems: 'center',
     fontSize: '45px',
-    color: '#263238',
+    color: '#607D8B',
     borderRadius: '9px',
+    
+
 
   }, 
 
@@ -101,7 +102,9 @@ const useStyles = makeStyles({
     marginRight: '40px',
     bottom: '0',
     marginLeft: '5px',
-    paddingBottom: '10px'
+    paddingBottom: '10px',
+    color: '#607D8B',
+    fontWeight: '600'
   },
   metric: {
     height: '20px',

@@ -6,21 +6,16 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import RecordingComponent from './workout/recordingComponent';
-
-
-
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
   return (
     <div
-      role="tabpanel"
+      role='tabpanel'
       hidden={value !== index}
       id={`nav-tabpanel-${index}`}
       aria-labelledby={`nav-tab-${index}`}
-      
       {...other}
     >
       {value === index && (
@@ -48,7 +43,7 @@ function a11yProps(index) {
 function LinkTab(props) {
   return (
     <Tab
-      component="a"
+      component='a'
       onClick={(event) => {
         event.preventDefault();
       }}
@@ -67,15 +62,12 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: '#DE4922',
     },
 
-
     indicatorColor: '#DE4922',
-    shadows: ["none"]
-    
- 
-  }
+    shadows: ['none'],
+  },
 }));
 
-export default function SingleTab(props) {
+export default function Stats(props) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -85,26 +77,27 @@ export default function SingleTab(props) {
 
   return (
     <div className={classes.root}>
-      <AppBar position="relative" elevation={0}>
+      <AppBar position='relative' elevation={0}>
         <Tabs
-          variant="standard"
+          variant='standard'
           value={value}
           onChange={handleChange}
-          indicatorColor="secondary"
-          aria-label="nav tabs example"
+          indicatorColor='secondary'
+          aria-label='nav tabs example'
           background='white'
           className={classes.tab}
-         
         >
-          <LinkTab label={props.tabName} href="/workout" {...a11yProps(0)} />
+          <LinkTab label={props.label1} href='/exercise' {...a11yProps(0)} />
+          <LinkTab label={props.label2} href='/record' {...a11yProps(1)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        {props.tab1}
+        {props.Tab1}
       </TabPanel>
       <TabPanel value={value} index={1}>
-
+        {props.Tab2}
       </TabPanel>
+
     </div>
   );
 }

@@ -8,7 +8,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { useMediaQuery } from '@material-ui/core';
 import {  useTheme } from '@material-ui/core';
-import styles from  '../utils/landing.module.css'
+
 
 const useStyles = makeStyles( theme => ({
 	

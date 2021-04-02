@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles, fade, createMuiTheme } from '@material-ui/core/styles';
+import { makeStyles, fade} from '@material-ui/core/styles';
 import { Typography,  AppBar, Toolbar, Button } from '@material-ui/core';
 import Logo from '../assets/fitform logo.svg';
 
@@ -72,14 +72,7 @@ const useStyles = makeStyles({
 });
 
 
-const titleFont = createMuiTheme({
-  typography: {
-    fontFamily: [
-      'IBM Plex Serif',
-      'sans-serif',
-    ].join(','),
-	}
-})
+
 
 
 // Main Navbar for 

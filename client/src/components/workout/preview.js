@@ -5,7 +5,9 @@ import LinearProgress from '@material-ui/core/LinearProgress';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button';
 import {  withStyles } from '@material-ui/core/styles';
+import Image from '../../assets/triceps.png'
 //import RecordingComponent from './recordingComponent';
 
 
@@ -67,12 +69,14 @@ const useStyles = makeStyles({
 
   videoContainer:  {
     border: '1px solid #fff',
-    width: '500px',
-    height: '300px',
+    width: '700px',
+    height: '500px',
     borderColor: 'black',
     textAlign: 'center',
     marginTop: '50px',
-    
+    backgroundImage: `url(${Image})`,
+    backgroundSize: 'cover',
+
 
 
   },
@@ -100,6 +104,25 @@ const useStyles = makeStyles({
 	
   },
 
+  pauseButton: {
+    textAlign: 'center',
+    background: '#DE4922',
+    height: '50px',
+    width: '180px',
+    borderRadius: '10px',
+    color: 'white',
+    fontSize: '18px',
+    border: 'none',
+    marginTop: '25px',
+    marginBottom: '10px',
+    marginLeft: '25px',
+    '&:hover': {
+			backgroundColor: '#E57F64',
+			color: '#FFF'
+		}
+	
+  },
+
   buttonContainer: {
     width: '100%',
     textAlign: 'center'
@@ -113,12 +136,12 @@ const useStyles = makeStyles({
   }
 });
 
-export default function WorkoutContainer() {
+export default function Preview() {
   const classes = useStyles();
   //const [progress, setProgress] = React.useState(10);
   const [playing, setPlaying] = useState(false);
-  const HEIGHT = 300;
-  const WIDTH = 500;
+  const HEIGHT = 500;
+  const WIDTH = 700;
   const embedId = 'popGXI-qs98'
 
 	const startVideo = () => {
@@ -152,35 +175,28 @@ export default function WorkoutContainer() {
       </div>
       <LinearProgressWithLabel color='secondary' />
       <Grid container spacing={2} >
-        <Grid item xs={12} md={6} justify={'center'}>
-          
+        <Grid item xs={12} md={12} justify={'center'}>
+          <div className={classes.gridContainer}>      
+            <div className={classes.videoContainer} >
+            <video
+                height={HEIGHT}
+                width={WIDTH}
+                className='app__videoFeed'
+                muted
+                autoPlay>
+                </video>
+            </div>
+            </div>
         </Grid>
-        <Grid item xs={12} md={12}> 
-          <div className={classes.gridContainer}>
-          <div className={classes.videoContainer}>
-            <iframe
-              width="500"
-              height="300"
-              src={`https://www.youtube.com/embed/${embedId}`}
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              title="Embedded youtube"
-            />
-          </div>
-          </div>
-        </Grid>
-
-        <div className={classes.textBox}>
-          <h1 className={classes.header}> Tricep Dips Instructions </h1>
-          <ul>
-            <li>Be sure to keep your elbows straight behind you versus splaying them outward.</li>
-            <li>Resist shrugging your shoulders — keep them neutral with your neck relaxed.</li>
-            <li>Increase the difficulty of this exercise by straightening your legs and placing only your heels on the floor instead of the whole foot.</li>
-          </ul>      
-        </div>
         <div className={classes.buttonContainer}>       
-
+          <div className="app__input">
+                {playing ? (
+                  <Button onClick={stopVideo} className={classes.actionButton}>Stop</Button>
+                ) : (
+                  <Button onClick={startVideo} className={classes.actionButton}>Start</Button>
+                )}
+                <Button onClick={stopVideo} className={classes.pauseButton}>Pause</Button>
+          </div>
         </div>
       </Grid>
     </div>
