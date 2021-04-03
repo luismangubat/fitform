@@ -9,7 +9,7 @@ import Bench from '../../assets/bench.png';
 import Squat from '../../assets/squat.png';
 import Pullup from '../../assets/pullup.png';
 
-const exercise = () => {
+const search = () => {
   return (
     <div className={styles.Container}>
       <a href='/workout'>
@@ -22,7 +22,7 @@ const exercise = () => {
         <h2>Barbell Squat</h2>
         <img src={Squat} alt='' />
       </div>
-      {/* <div className={styles.Exercise}>
+      <div className={styles.Exercise}>
         <h2 style={{}}>Dumbbell Curls</h2>
         <img src={Curl} alt='' />
       </div>
@@ -42,7 +42,7 @@ const exercise = () => {
         <h2 style={{}}>Bench Press</h2>
         <img src={Bench} alt='' />
       </div>
-      
+
       <div className={styles.Exercise}>
         <h2 style={{}}>Pull-Up</h2>
         <img src={Pullup} alt='' />
@@ -62,9 +62,9 @@ const exercise = () => {
       <div className={styles.Exercise}>
         <h2 style={{}}>Dumbbell Curls</h2>
         <img src={Workout} alt='' />
-      </div> */}
+      </div>
     </div>
   );
 };
 
-export default exercise;
+export default search;

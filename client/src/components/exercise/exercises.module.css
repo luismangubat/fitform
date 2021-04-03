@@ -1,13 +1,13 @@
 .Exercise {
-  width: 300px;
-  height: 300px;
+  width: 275px;
+  height: 275px;
   border-radius: 20px;
   color: white;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 30px;
+  margin: 20px;
   position: relative;
 }
 
@@ -27,15 +27,30 @@ a {
   border-radius: 20px;
 }
 
-.Exercise video {
-  width: 100%;
+.Recording {
+  width: 275px;
+  height: 275px;
+  border-radius: 15px;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  position: relative;
+}
+
+.Recording video {
+  width: 275px;
   z-index: 5;
   position: absolute;
   border-radius: 20px;
+  object-fit: cover;
 }
 
 .Container {
   display: flex;
   flex-flow: wrap;
   justify-content: center;
+  overflow: hidden;
 }
