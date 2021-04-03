@@ -11,7 +11,7 @@ import Pullup from '../../assets/pullup.png';
 
 const exercise = () => {
   return (
-    <div className={styles.Container}>
+    <div style={{ display: 'flex' }}>
       <a href='/workout'>
         <div className={styles.Exercise}>
           <h2>Tricep Dips</h2>

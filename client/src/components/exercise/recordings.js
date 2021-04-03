@@ -5,27 +5,27 @@ import Recording2 from '../../assets/recording2.mp4';
 
 const recordings = () => {
   return (
-    <div className={styles.Container}>
+    <div className={styles.VidContainer}>
       <div className={styles.Recording}>
-        <video controls weight='275' height='275'>
+        <video controls width='400' height='275'>
           <source src={Recording} type='video/mp4' />
         </video>
       </div>
       <div className={styles.Recording}>
-        <video controls weight='275' height='275'>
+        <video controls width='400' height='275'>
           <source src={Recording2} type='video/mp4' />
         </video>
       </div>
       <div className={styles.Recording}>
-        <video controls weight='275' height='275'>
+        <video controls width='400' height='275'>
           <source src={Recording} type='video/mp4' />
         </video>
       </div>
-      <div className={styles.Recording}>
-        <video controls weight='275' height='275'>
+      {/* <div className={styles.Recording}>
+        <video controls width='275' height='275'>
           <source src={Recording} type='video/mp4' />
         </video>
-      </div>
+      </div> */}
     </div>
   );
 };

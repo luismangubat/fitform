@@ -28,7 +28,7 @@ a {
 }
 
 .Recording {
-  width: 275px;
+  width: 400px;
   height: 275px;
   border-radius: 15px;
   color: white;
@@ -41,7 +41,7 @@ a {
 }
 
 .Recording video {
-  width: 275px;
+  width: 400px;
   z-index: 5;
   position: absolute;
   border-radius: 20px;
@@ -52,5 +52,18 @@ a {
   display: flex;
   flex-flow: wrap;
   justify-content: center;
+  /* margin: auto;
+  text-align: center; */
   overflow: hidden;
+}
+
+/* .Centred {
+  display: flex;
+  margin: auto;
+} */
+
+.VidContainer {
+  display: flex;
+  overflow: hidden;
+  flex-flow: wrap;
 }
