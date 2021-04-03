@@ -14,6 +14,7 @@ const useStyles = makeStyles({
     position: 'fixed',
     zIndex: '100',
     width: '100%',
+    
   },
 
   navbarLogo: {
@@ -72,7 +73,7 @@ const Navbar = (props) => {
       style={{
         backdropFilter: 'blur(20px) saturate(200%)',
         boxShadow: '0 0 20px rgba(0,0,0,.04)',
-        background: 'rgba(250,251,255,.01)',
+        background: '#FFF',
         position: 'relative',
       }}
     >

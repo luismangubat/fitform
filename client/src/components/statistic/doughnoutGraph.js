@@ -50,6 +50,7 @@ const useStyles = makeStyles({
     fontSize: '45px',
     color: '#25546B',
     borderRadius: '9px',
+    background:'white'
     
 
 
@@ -64,6 +65,7 @@ const useStyles = makeStyles({
     fontSize: '45px',
     color: '#263238',
     borderRadius: '9px',
+    background:'white'
 
 
   },  
@@ -77,7 +79,8 @@ const useStyles = makeStyles({
     fontSize: '45px',
     color: '#263238',
     borderRadius: '9px',
-    marginBottom: '30px'
+    marginBottom: '30px',
+    background:'white'
 
 
   },  
@@ -93,6 +96,7 @@ const useStyles = makeStyles({
     fontSize: '45px',
     color: '#263238',
     borderRadius: '9px',
+    background:'white'
 
   }, 
 
@@ -106,7 +110,8 @@ const useStyles = makeStyles({
     fontSize: '45px',
     color: '#263238',
     borderRadius: '9px',
-    marginBottom: '30px'
+    marginBottom: '30px',
+    background:'white'
 
   }, 
   metricDescription: {
@@ -117,7 +122,8 @@ const useStyles = makeStyles({
     marginLeft: '5px',
     paddingBottom: '10px',
     color: '#25546B',
-    fontWeight: '600'
+    fontWeight: '600',
+    
   },
   metric: {
     height: '20px',
@@ -148,7 +154,8 @@ const useStyles = makeStyles({
   },
 
   gridContainer: {
-    paddingBottom: '60px'
+    paddingBottom: '60px',
+
   }
 
 

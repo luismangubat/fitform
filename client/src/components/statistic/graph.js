@@ -12,6 +12,7 @@ const useStyles = makeStyles( theme => ({
     // Change this later
     height: '600px',
     marginBottom: '50px',
+    background: '#F9F9F9',
     filter: 'dropShadow(0px 9.03012px 27.0904px rgba(176, 190, 197, 0.32)), dropShadow(0px 3.38629px 5.64383px rgba(176, 190, 197, 0.32)',
     [theme.breakpoints.up('sm')]: {
       fontSize: '20px',
