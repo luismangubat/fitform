@@ -72,6 +72,10 @@ const useStyles = makeStyles((theme) => ({
     shadows: ["none"]
     
  
+  },
+
+  tabPanel: {
+    background: '#F4F4F4'
   }
 }));
 
@@ -99,10 +103,10 @@ export default function SingleTab(props) {
           <LinkTab label={props.tabName} href="/workout" {...a11yProps(0)} />
         </Tabs>
       </AppBar>
-      <TabPanel value={value} index={0}>
+      <TabPanel value={value} index={0}  className={classes.tabPanel}>
         {props.tab1}
       </TabPanel>
-      <TabPanel value={value} index={1}>
+      <TabPanel value={value} index={1}  className={classes.tabPanel}>
 
       </TabPanel>
     </div>

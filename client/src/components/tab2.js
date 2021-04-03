@@ -66,6 +66,10 @@ const useStyles = makeStyles((theme) => ({
     indicatorColor: '#DE4922',
     shadows: ['none'],
   },
+  
+  tabPanel: {
+    background: '#F4F4F4'
+  }
 }));
 
 export default function Stats(props) {
@@ -92,10 +96,10 @@ export default function Stats(props) {
           <LinkTab label={props.label2} href='/record' {...a11yProps(1)} />      
         </Tabs>
       </AppBar>
-      <TabPanel value={value} index={0}>
+      <TabPanel value={value} index={0}  className={classes.tabPanel}>
         {props.Tab1}
       </TabPanel>
-      <TabPanel value={value} index={1}>
+      <TabPanel value={value} index={1}  className={classes.tabPanel}>
         {props.Tab2}
       </TabPanel>
 
