@@ -8,6 +8,7 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import {  withStyles } from '@material-ui/core/styles';
 import Image from '../../assets/triceps.png'
+import Dip from '../../assets/dipp.gif'
 //import RecordingComponent from './recordingComponent';
 
 
@@ -80,6 +81,22 @@ const useStyles = makeStyles({
 
 
   },
+
+  dipContainer:  {
+    border: '1px solid #fff',
+    width: '700px',
+    height: '500px',
+    borderColor: 'black',
+    textAlign: 'center',
+    marginTop: '50px',
+    backgroundImage: `url(${Dip})`,
+    backgroundSize: '100% 100%',
+    marginBottom: '50px'
+
+
+
+  },
+
 
   header: {
     paddingLeft: '15px',
@@ -175,7 +192,7 @@ export default function Preview() {
       </div>
       <LinearProgressWithLabel color='secondary' />
       <Grid container spacing={2} >
-        <Grid item xs={12} md={12} justify={'center'}>
+        <Grid item xs={12} md={6} justify={'center'}>
           <div className={classes.gridContainer}>      
             <div className={classes.videoContainer} >
             <video
@@ -185,6 +202,12 @@ export default function Preview() {
                 muted
                 autoPlay>
                 </video>
+            </div>
+            </div>
+        </Grid>
+        <Grid item xs={12} md={6} justify={'center'}>
+          <div className={classes.gridContainer}>      
+            <div className={classes.dipContainer} >
             </div>
             </div>
         </Grid>
