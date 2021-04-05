@@ -1,4 +1,3 @@
-
 import './App.css';
 import Landing from './pages/landing';
 import Profile from './pages/profile';
@@ -6,6 +5,7 @@ import Workout from './pages/workout';
 import Record from './pages/record';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ExercisePage from './pages/exercise';
+import Feedback from './pages/feedback';
 
 function App() {
   return (
@@ -28,6 +28,9 @@ function App() {
           <Route exact path='/record'>
             <Record/>
           </Route>
+          <Route exact path='/feedback'>
+            <Feedback/>
+          </Route>          
         </Switch>
 
       </BrowserRouter>

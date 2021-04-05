@@ -9,6 +9,7 @@ import Button from '@material-ui/core/Button';
 import {  withStyles } from '@material-ui/core/styles';
 import Image from '../../assets/triceps.png'
 import Dip from '../../assets/dipp.gif'
+
 //import RecordingComponent from './recordingComponent';
 
 
@@ -214,7 +215,7 @@ export default function Preview() {
         <div className={classes.buttonContainer}>       
           <div className="app__input">
                 {playing ? (
-                  <Button onClick={stopVideo} className={classes.actionButton}>Stop</Button>
+                  <Button onClick={stopVideo} className={classes.actionButton} href='/feedback'>Stop</Button>
                 ) : (
                   <Button onClick={startVideo} className={classes.actionButton}>Start</Button>
                 )}
