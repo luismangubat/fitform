@@ -229,12 +229,12 @@ const data = {
   responsive: false,
   datasets: [
     {
-      data: [100, 300],
+      data: [300, 50],
       backgroundColor: [ '#DE4922', '#CFD8DC'],
       hoverBackgroundColor: [ '#DE4922', '#CFD8DC']
     }
   ], 
-  text: '25%'
+  text: '85%'
 };
 
 

@@ -191,12 +191,12 @@ const data = {
   responsive: false,
   datasets: [
     {
-      data: [100, 300],
+      data: [300, 100],
       backgroundColor: [ '#DE4922', '#CFD8DC'],
       hoverBackgroundColor: [ '#DE4922', '#CFD8DC']
     }
   ], 
-  text: '25%'
+  text: '75%'
 };
 
 
@@ -210,10 +210,10 @@ const DoughnutGraph = () => {
           <Box  boxShadow={3} className={classes.doughnutContainer}>
             <div varian={'h1'}className={classes.doughnutTitle}>
             <Typography className={classes.doughtnutDesc}>
-              Workout Complete
+              Overall 
             </Typography>
             <Typography className={classes.doughtnutDesc}>
-              Leg Day 
+              Form Accuracy 
             </Typography>
             </div>
             <Doughnut data={data}/>
@@ -231,12 +231,12 @@ const DoughnutGraph = () => {
 
           <div className={classes.outerContainer}>
               <Box  boxShadow={3} className={classes.boxcContainer}>
-                <div className={classes.metric}> 25</div>
-                <div className={classes.metricDescription}> Total Squat</div>
+                <div className={classes.metric}> 200</div>
+                <div className={classes.metricDescription}> Perfect Reps</div>
               </Box>
               <Box  boxShadow={3} className={classes.rightBoxcContainer}>
-                <div className={classes.metric}> 25</div>
-                <div className={classes.metricDescription}> Total Pushups</div>
+                <div className={classes.metric}> 140</div>
+                <div className={classes.metricDescription}> Missed Reps</div>
               </Box>
      
           </div>   
